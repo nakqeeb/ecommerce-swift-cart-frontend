@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="detail-section">
+      @if (isLoading) {
+      <div class="text-center my-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-2">Loading product details...</p>
+      </div>
+      } @else {
+      <div class="container-fluid details">
+        <img src="{{ product?.imageUrl }}" class="detail-img" />
+
+        <div>
+          <h3>{{ product?.name }}</h3>
+          <div class="price">{{ product?.unitPrice | currency : "USD" }}</div>
+          <button (click)="addToCart()" class="btn add-to-cart-btn btn-sm">
+            Add to cart
+          </button>
+
+          <hr />
+          <h4>Description</h4>
+          <p>{{ product?.description }}</p>
+
+          <a
+            (click)="goBack()"
+            style="cursor: pointer; color: #7f8caa; font-weight: 800"
+            >Back to Product List</a
+          >
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>

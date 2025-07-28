@@ -1,0 +1,171 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="container mt-5">
+        <h2 class="mb-4">Your Order History</h2>
+
+        @if (isLoading) {
+        <div class="text-center my-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">Loading your orders...</p>
+        </div>
+        } @if (error()) {
+        <div class="alert alert-danger">
+          {{ error() }}
+        </div>
+        } @if (!isLoading && orders().length === 0 && !error()) {
+        <div class="alert alert-info">You haven't placed any orders yet.</div>
+        } @for (order of orders(); track order.orderTrackingNumber) {
+        <div class="card mb-5">
+          <div class="card-header bg-light">
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="mb-0">
+                  Order #{{ order.orderTrackingNumber }}
+                  <span class="badge bg-primary ms-2">{{ order.status }}</span>
+                </h5>
+              </div>
+              <div class="col-md-6 text-md-end">
+                <small class="text-muted"
+                  >Placed on {{ order.dateCreated | date : "medium" }}</small
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <!-- Order Items Table -->
+            <h5 class="mb-3">Order Items</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>Product</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-end">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (item of order.orderItems; track item.productId) {
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <img
+                          [src]="item.imageUrl"
+                          class="img-thumbnail me-3"
+                          width="60"
+                          alt="Product image"
+                        />
+                        <div>
+                          <div>{{ item.productName }}</div>
+                          <small class="text-muted"
+                            >ID: {{ item.productId }}</small
+                          >
+                        </div>
+                      </div>
+                    </td>
+                    <td class="text-end">{{ item.unitPrice | currency }}</td>
+                    <td class="text-center">{{ item.quantity }}</td>
+                    <td class="text-end">
+                      {{ item.unitPrice * item.quantity | currency }}
+                    </td>
+                  </tr>
+                  }
+                  <tr class="table-light">
+                    <td colspan="3" class="text-end fw-bold">Order Total:</td>
+                    <td class="text-end fw-bold">
+                      {{ order.totalPrice | currency }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Addresses -->
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <h5>Shipping Address</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>Street</th>
+                        <td>{{ order.shippingAddress.street }}</td>
+                      </tr>
+                      <tr>
+                        <th>City</th>
+                        <td>{{ order.shippingAddress.city }}</td>
+                      </tr>
+                      <tr>
+                        <th>State</th>
+                        <td>{{ order.shippingAddress.state }}</td>
+                      </tr>
+                      <tr>
+                        <th>Country</th>
+                        <td>{{ order.shippingAddress.country }}</td>
+                      </tr>
+                      <tr>
+                        <th>Zip Code</th>
+                        <td>{{ order.shippingAddress.zipCode }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <h5>Billing Address</h5>
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        <th>Street</th>
+                        <td>{{ order.billingAddress.street }}</td>
+                      </tr>
+                      <tr>
+                        <th>City</th>
+                        <td>{{ order.billingAddress.city }}</td>
+                      </tr>
+                      <tr>
+                        <th>State</th>
+                        <td>{{ order.billingAddress.state }}</td>
+                      </tr>
+                      <tr>
+                        <th>Country</th>
+                        <td>{{ order.billingAddress.country }}</td>
+                      </tr>
+                      <tr>
+                        <th>Zip Code</th>
+                        <td>{{ order.billingAddress.zipCode }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer bg-light">
+            <div class="row">
+              <div class="col-md-6">
+                <small
+                  >Last updated:
+                  {{ order.lastUpdated | date : "medium" }}</small
+                >
+              </div>
+              <div class="col-md-6 text-md-end">
+                <span class="badge bg-info"
+                  >Total Items: {{ order.totalQuantity }}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,227 @@
+<div
+  class="d-flex flex-column justify-content-center align-items-center min-vh-100"
+>
+  <img
+    src="images/cart_logo.svg"
+    alt="swiftCart"
+    width="150px"
+    class="img-responsive mt-5 mb-5"
+  />
+
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    @if (loginMode()) {
+
+    <div class="d-flex flex-column mb-3">
+      <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text h-100" id="basic-addon1"
+            ><i class="fa-solid fa-envelope"></i
+          ></span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Email"
+          aria-label="Email"
+          aria-describedby="basic-addon1"
+          formControlName="email"
+        />
+      </div>
+      @if (email?.invalid && (email?.dirty || email?.touched)) {
+      <div class="alert alert-danger py-1 m-0">
+        @if (email?.errors!['required']) {
+        <div>Email is required</div>
+        } @if (email?.errors!['pattern']) {
+        <div>Email must be a valid email address format</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="d-flex flex-column mb-3">
+      <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text h-100" id="basic-addon1"
+            ><i class="fa-solid fa-lock"></i
+          ></span>
+        </div>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          aria-label="Password"
+          aria-describedby="basic-addon1"
+          formControlName="password"
+        />
+      </div>
+      @if (loginPassword?.invalid && (loginPassword?.dirty ||
+      loginPassword?.touched)) {
+      <div class="alert alert-danger py-1 m-0">
+        @if (loginPassword?.errors!['required']) {
+        <div>Password is required</div>
+        }
+      </div>
+      }
+    </div>
+    } @else {
+    <div class="d-flex flex-column mb-3">
+      <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text h-100" id="basic-addon1"
+            ><i class="fa-solid fa-user"></i
+          ></span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          aria-label="FirstName"
+          aria-describedby="basic-addon1"
+          formControlName="firstName"
+        />
+      </div>
+      @if (firstName?.invalid && (firstName?.dirty || firstName?.touched)) {
+      <div class="alert alert-danger py-1 m-0">
+        @if (firstName?.errors!['required'] ||
+        firstName?.errors!['noWhitespace']) {
+        <div>First Name is required</div>
+        } @if (firstName?.errors!['minlength']) {
+        <div>First Name must be at least 2 characters long</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="d-flex flex-column mb-3">
+      <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text h-100" id="basic-addon1"
+            ><i class="fa-solid fa-user"></i
+          ></span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          aria-label="LastName"
+          aria-describedby="basic-addon1"
+          formControlName="lastName"
+        />
+      </div>
+      @if (lastName?.invalid && (lastName?.dirty || lastName?.touched)) {
+      <div class="alert alert-danger py-1 m-0">
+        @if (lastName?.errors!['required'] || lastName?.errors!['noWhitespace'])
+        {
+        <div>Last Name is required</div>
+        } @if (lastName?.errors!['minlength']) {
+        <div>Last Name must be at least 2 characters long</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div class="d-flex flex-column mb-3">
+      <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text h-100" id="basic-addon1"
+            ><i class="fa-solid fa-envelope"></i
+          ></span>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Email"
+          aria-label="Email"
+          aria-describedby="basic-addon1"
+          formControlName="email"
+        />
+      </div>
+      @if (email?.invalid && (email?.dirty || email?.touched)) {
+      <div class="alert alert-danger py-1 m-0">
+        @if (email?.errors!['required']) {
+        <div>Email is required</div>
+        } @if (email?.errors!['pattern']) {
+        <div>Email must be a valid email address format</div>
+        }
+      </div>
+      }
+    </div>
+
+    <div formGroupName="passwords">
+      <div class="d-flex flex-column mb-3">
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text h-100" id="basic-addon1"
+              ><i class="fa-solid fa-lock"></i
+            ></span>
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+            formControlName="password"
+          />
+        </div>
+        @if (password?.invalid && (password?.dirty || password?.touched)) {
+        <div class="alert alert-danger py-1 m-0">
+          @if (password?.errors!['required']) {
+          <div>Password is required</div>
+          } @if (password?.errors!['minlength']) {
+          <div>First Name must be at least 6 characters long</div>
+          }
+        </div>
+        }
+      </div>
+
+      <div class="d-flex flex-column mb-3">
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span class="input-group-text h-100" id="basic-addon1"
+              ><i class="fa-solid fa-lock"></i
+            ></span>
+          </div>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Confirm Password"
+            aria-label="ConfirmPassword"
+            aria-describedby="basic-addon1"
+            formControlName="confirmPassword"
+          />
+        </div>
+        @if (password?.invalid && (password?.dirty || password?.touched)) {
+        <div class="alert alert-danger py-1 m-0">
+          @if (password?.errors!['required']) {
+          <div>Password is required</div>
+          } @if (password?.errors!['minlength']) {
+          <div>First Name must be at least 6 characters long</div>
+          }
+        </div>
+        }
+      </div>
+      @if (passwords?.invalid && (passwords?.dirty || passwords?.touched)) { @if
+      (passwords?.errors!['valuesNotEqual']) {
+      <div class="alert alert-danger py-1 mt-0 mb-3">
+        Passwords aren't match
+      </div>
+      } }
+    </div>
+
+    }
+
+    <button type="submit" class="btn submit-btn mb-3" [disabled]="isLoading">
+      @if (!isLoading) {
+      {{ loginMode() ? "Login" : "Sign up" }}
+      } @else {
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      }
+    </button>
+    <button type="button" class="btn submit-btn" (click)="switchMode()">
+      {{ loginMode() ? "Create new account" : "Login instead" }}
+    </button>
+  </form>
+</div>

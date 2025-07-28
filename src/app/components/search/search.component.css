@@ -1,0 +1,84 @@
+.form-header {
+  display: flex;
+}
+
+.au-btn-submit {
+  position: relative;
+  right: 0;
+  min-width: 95px;
+  color: #333446;
+  border: 1px solid #B8CFCE;
+  border-radius: 43px;
+  background: #B8CFCE;
+}
+
+.au-btn-submit:hover {
+  background: #7F8CAA;
+}
+
+.au-btn-submit>i {
+  font-size: 20px;
+  color: #EAEFEF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.au-input-xl {
+  min-width: 935px;
+}
+
+input.au-input.au-input-xl {
+  border-radius: 40px !important;
+  margin-right: 15px;
+}
+
+.au-input {
+  line-height: 43px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  background-color: #EAEFEF;
+  color: #333446;
+  padding: 0 17px;
+  border-radius: 3px;
+  transition: all .5s ease;
+}
+
+@media (max-width:1600px) {
+  .au-input-xl {
+    min-width: 290px;
+  }
+}
+
+@media (max-width:991px) {
+  .form-header {
+    justify-content: center;
+  }
+
+  .au-input-xl {
+    min-width: 350px;
+  }
+}
+
+
+@media (max-width:767px) {
+  .au-btn-submit {
+    position: relative;
+    right: 10px;
+    min-width: 85px;
+    color: #EAEFEF;
+    border: 1px solid #B8CFCE;
+    border-radius: 0;
+    background: #B8CFCE;
+  }
+
+  .au-input-xl {
+    min-width: 150px;
+  }
+
+  input.au-input.au-input-xl {
+    border-radius: 0 !important;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,78 @@
+aside.menu-sidebar.d-none.d-lg-block.clr {
+  background: 0 0;
+  z-index: 99999999;
+  height: 75px;
+  box-shadow: -2px 0 4px #0000003b
+}
+
+
+.menu-sidebar {
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #EAEFEF;
+  overflow-y: auto
+}
+
+.menu-sidebar .logo {
+  background: #EAEFEF;
+  height: 75px;
+  padding: 0 35px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+  border-right: 1px solid #e5e5e5;
+  position: relative;
+  z-index: 3
+}
+
+.menu-sidebar .navbar-list .navbar-sub-list {
+  display: none;
+  padding-left: 34px
+}
+
+.menu-sidebar .navbar-list .navbar-sub-list li a {
+  padding: 11.5px 0;
+}
+
+.menu-sidebar-content {
+  position: relative;
+  height: calc(100vh - 75px)
+}
+
+.navbar-sidebar {
+  height: 80%;
+  padding: 35px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-sidebar .navbar-list li a {
+  display: block;
+  color: #333446;
+  font-size: 16px;
+  padding: 5px 0
+}
+
+.navbar-sidebar .navbar-list li a i {
+  margin-right: 19px
+}
+
+.navbar-sidebar .navbar-list li a:hover {
+  color: #333446
+}
+
+.login-btn {
+  color: #EAEFEF !important;
+  border: 1px solid #333446 !important;
+  border-radius: 13px !important;
+  background: #333446 !important;
+}
+
+.login-btn:hover {
+  background: #494a5e !important;
+}

@@ -1,0 +1,23 @@
+.detail-section {
+  margin-top: 60px
+}
+
+.detail-img {
+  width: 30%;
+}
+
+.price {
+  margin: 15px 0 0;
+  font-weight: 800;
+  color: #333446
+}
+
+.add-to-cart-btn {
+  background-color: #7F8CAA !important;
+  color: #EAEFEF !important;
+  font-weight: bold !important;
+}
+
+.details {
+  display: flex;
+}

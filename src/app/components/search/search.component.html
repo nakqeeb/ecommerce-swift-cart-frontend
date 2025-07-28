@@ -1,0 +1,12 @@
+<form class="form-header" onsubmit="return false;" method="GET">
+  <input
+    #muInput
+    class="au-input au-input-xl"
+    type="text"
+    placeholder="Search for products ..."
+    (key.enter)="doSearch(muInput.value)"
+  />
+  <button class="au-btn-submit" type="submit" (click)="doSearch(muInput.value)">
+    Search
+  </button>
+</form>

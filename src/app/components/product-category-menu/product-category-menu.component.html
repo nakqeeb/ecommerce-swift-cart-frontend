@@ -1,0 +1,42 @@
+<aside class="menu-sidebar d-none d-lg-block">
+  <div class="logo">
+    <a routerLink="/products">
+      <img src="images/logo.svg" alt="swiftCart" class="img-responsive" />
+    </a>
+  </div>
+  <div class="menu-sidebar-content js-scrollbar1">
+    <nav class="navbar-sidebar">
+      @if (isLoading) {
+        <div class="text-center my-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <p class="mt-2">Loading categories...</p>
+        </div>
+        }
+      <ul class="list-unstyled navbar-list">
+        @for (category of productCategories; track category.id) {
+        <li>
+          <a
+            [routerLink]="['/category', category.id]"
+            routerLinkActive="active-link"
+            >{{ category.categoryName }}</a
+          >
+        </li>
+        }
+      </ul>
+
+      @if (!isAuth()) {
+      <button class="btn login-btn" type="button" (click)="toAuthPage()">
+        Login <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+      </button>
+      } @else {
+      <button class="btn login-btn" type="button" (click)="onLogout()">
+        Logout <span><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+      </button>
+      }
+    </nav>
+  </div>
+</aside>
+
+

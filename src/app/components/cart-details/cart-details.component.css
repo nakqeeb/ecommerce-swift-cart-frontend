@@ -1,0 +1,56 @@
+.img-responsive,
+p,
+.btn-div,
+.items {
+  background-color: #EAEFEF;
+}
+
+.items button {
+  background-color: #7F8CAA;
+  color: #EAEFEF;
+}
+
+.remove-btn {
+  background-color: #B8CFCE;
+}
+
+.checkout-btn {
+  background-color: #333446;
+  color: #EAEFEF;
+}
+
+
+.table {
+  margin: 0
+}
+
+table.table.table-bordered {
+  border: 1px solid #ccc;
+  background: #EAEFEF
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #dee2e6
+}
+
+table.table.table-bordered th {
+  BACKGROUND: #333446;
+  color: #EAEFEF;
+  font-size: 14px;
+  padding: 7px
+}
+
+.table-responsive {
+  padding-right: 1px
+}
+
+.items select {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  outline: 0;
+  margin-left: 5px
+}
