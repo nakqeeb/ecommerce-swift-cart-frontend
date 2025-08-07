@@ -3,3 +3,21 @@
   color: #EAEFEF;
   width: 100%;
 }
+
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in-element.show {
+  opacity: 1;
+}
+
+.slide-in-element {
+  transform: translateY(100%);
+  transition: transform 0.9s ease-in-out;
+}
+
+.slide-in-element.show {
+  transform: translateX(0);
+}

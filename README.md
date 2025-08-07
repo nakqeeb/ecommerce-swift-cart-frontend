@@ -1,59 +1,53 @@
-# AngularEcommerce
+# 🛍️ SwiftCart
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+**SwiftCart** is a full-stack eCommerce web application built using **Angular** for the frontend and **Spring Boot** for the backend. It supports full CRUD operations, secure authentication, and essential eCommerce features for a smooth user experience.
 
-## Development server
+## 🚀 Tech Stack
 
-To start a local development server, run:
+- **Frontend:** Angular  
+- **Backend:** Spring Boot  
+- **Authentication:** JWT (Login & Signup)  
+- **Database:** (MySQL)
 
-```bash
-ng serve
-```
+## ✅ Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 🛒 **Product Listing & Details**  
+  - View a list of products with detailed info for each item.
 
-## Code scaffolding
+- 🗂️ **Category Grouping**  
+  - Products are grouped by their categories.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 🔍 **Search Functionality**  
+  - Search for products by name.
 
-```bash
-ng generate component component-name
-```
+- 📄 **Pagination**  
+  - Paginated product list for better performance.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- ➕ **Add to Cart**  
+  - Add products to your shopping cart.
 
-```bash
-ng generate --help
-```
+- 🔐 **Authentication**  
+  - Login and Sign Up for users with secure access.
 
-## Building
+- 🧾 **Checkout Page**  
+  - Authenticated users can submit checkout information.
 
-To build the project run:
+- 📦 **Order History**  
+  - View personal order history and track order status.
 
-```bash
-ng build
-```
+## 📸 Screenshots
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 🏠 Home Page
+![Home Page](screenshots/products-list.png)
 
-## Running unit tests
+### 📄 Product Details Page
+![Product Details](screenshots/product-details.png)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 📄 Cart Page
+![Product Details](screenshots/cart.png)
 
-```bash
-ng test
-```
+### 📄 Authentication Page
+![Product Details](screenshots/auth-page.png)
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### 📄 Order History Page
+![Product Details](screenshots/order-history.png)

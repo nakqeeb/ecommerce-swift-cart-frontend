@@ -43,7 +43,17 @@ export class AuthComponent {
       }
     });
   }
+isVisible: boolean = false;
 
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+  }
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.toggleVisibility();
+    }, 0.5)
+  }
 
   get loginPassword() { return this.authForm.get('password'); }
 
