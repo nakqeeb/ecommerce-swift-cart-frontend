@@ -51,3 +51,12 @@
 
 ### 📄 Order History Page
 ![Product Details](screenshots/order-history.png)
+
+
+## 🔗 Live Demo
+
+🚀 [Click here to view SwiftCart in action](https://ecommerce-swift-cart-frontend.onrender.com)
+
+## 📂 Repository
+
+📁 [GitHub Backend Repo](https://github.com/nakqeeb/ecommerce-swift-cart-backend)
